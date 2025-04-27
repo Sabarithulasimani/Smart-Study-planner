@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+public class MainDashboard extends JFrame {
+    public MainDashboard() {
+        setTitle("Smart Study AI - Dashboard");
+        setSize(500, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(12, 1, 10, 10));
+        JButton profileButton = new JButton("Setup Profile");
+        JButton plannerButton = new JButton("Study Planner");
+        JButton trackerButton = new JButton("Progress Tracker");
+        JButton suggestButton = new JButton("Smart Suggestions");
+        JButton motivationButton = new JButton("Motivation Zone");
+        JButton viewScheduleButton = new JButton("View Schedule");
+        JButton reminderButton = new JButton("Set Reminder");
+        JButton dynamicPlanButton = new JButton("Dynamic Planning");
+        JButton chartButton = new JButton("Progress Chart");
+        JButton markDoneButton = new JButton("Mark Task Done");
+        JButton dailyGoalsButton = new JButton("Daily Goals");
+        JButton exitButton = new JButton("Exit");
+        profileButton.addActionListener(e -> new ProfileSetup());
+        plannerButton.addActionListener(e -> new StudyPlanner());
+        trackerButton.addActionListener(e -> new ProgressTracker());
+        suggestButton.addActionListener(e -> new SmartSuggestions());
+        motivationButton.addActionListener(e -> new MotivationZone());
+        viewScheduleButton.addActionListener(e -> new ScheduleViewer());
+        reminderButton.addActionListener(e -> new ReminderManager());
+        dynamicPlanButton.addActionListener(e -> new DynamicPlanner());
+        chartButton.addActionListener(e -> new ProgressChart());
+        markDoneButton.addActionListener(e -> new MarkTaskCompleted());
+        dailyGoalsButton.addActionListener(e -> new DailyGoals());
+        exitButton.addActionListener(e -> System.exit(0));
+        buttonPanel.add(profileButton);
+        buttonPanel.add(plannerButton);
+        buttonPanel.add(trackerButton);
+        buttonPanel.add(suggestButton);
+        buttonPanel.add(motivationButton);
+        buttonPanel.add(viewScheduleButton);
+        buttonPanel.add(reminderButton);
+        buttonPanel.add(dynamicPlanButton);
+        buttonPanel.add(chartButton);
+        buttonPanel.add(markDoneButton);
+        buttonPanel.add(dailyGoalsButton);
+        buttonPanel.add(exitButton);
+        add(buttonPanel);
+        setVisible(true);
+    }
+}
